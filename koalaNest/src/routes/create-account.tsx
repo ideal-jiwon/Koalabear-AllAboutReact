@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../firebase';
 import { Link, useNavigate } from 'react-router-dom';
 import { FirebaseError } from 'firebase/app';
+import GithubButton from '../components/github-btn';
 
 
 const Wrapper = styled.div`
@@ -114,6 +115,7 @@ export default function CreateAccount(){
                 Do you already have an account? {" "}
                 <Link to="/login">Log in &rarr; </Link>
             </Switcher>
+            < GithubButton />
         </Wrapper>
     )
 }
