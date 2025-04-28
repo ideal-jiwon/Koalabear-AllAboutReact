@@ -4,8 +4,6 @@ import { auth, db, storage } from "../firebase";
 import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { getDownloadURL,ref, uploadBytes } from "firebase/storage";
 
-
-
     const Form = styled.form`
     
         display: flex;
@@ -90,9 +88,9 @@ import { getDownloadURL,ref, uploadBytes } from "firebase/storage";
                     userId: user.uid, 
                 });
                 if (file) {
-                    const locationRef = ref(
+            const locationRef = ref(
                         storage,
-                        `koalabear/${user.uid}-${user.displayName}/${doc.id}`
+                        `koalabear/${user.uid}/${doc.id}`
                     );
                     const result = await uploadBytes(locationRef, file);
                     const url = await getDownloadURL(result.ref);
